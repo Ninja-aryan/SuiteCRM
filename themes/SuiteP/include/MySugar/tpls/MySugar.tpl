@@ -51,6 +51,7 @@
         div.moduleTitle {
             height: 10px;
         }
+
     </style>
 {/literal}
 
@@ -67,9 +68,20 @@
 
         {foreach from=$dashboardPages key=tabNum item=tab}
             {if $tabNum == 0}
-                <li role="presentation" class="active">
+                <li role="presentation" class="active" style="background-color: green;">
+
+{*                    <a id="tab{$tabNum}" href="#tab_content_{$tabNum}" data-toggle="tab" {if !$lock_homepage}ondblclick="renameTab({$tabNum})"{/if} onClick="retrievePage({$tabNum});" class="hidden-xs">*}
+{*                        {$dashboardPages.$tabNum.pageTitle}*}
+{*                    </a>*}
+
+
                     <a id="tab{$tabNum}" href="#tab_content_{$tabNum}" data-toggle="tab" {if !$lock_homepage}ondblclick="renameTab({$tabNum})"{/if} onClick="retrievePage({$tabNum});" class="hidden-xs">
-                        {$dashboardPages.$tabNum.pageTitle}
+                        {if $dashboardPages.$tabNum.pageTitle == 'Original Dashboard Name'}
+                            {$dashboardPages.$tabNum.pageTitle}
+                        {else}
+                            NinjaCart CRM DashBoard
+
+                        {/if}
                     </a>
 
                     <a id="xstab{$tabNum}" href="#" class="visible-xs first-tab-xs dropdown-toggle" data-toggle="dropdown">
