@@ -38,25 +38,28 @@
  * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
  */
 
-$module_name = 'lm01_Loan_Manager';
-$viewdefs[$module_name]['QuickCreate'] = array(
-    'templateMeta' => array(
-        'maxColumns' => '2',
-        'widths' => array(
-            array('label' => '10', 'field' => '30'),
-            array('label' => '10', 'field' => '30')
-        ),
-    ),
+if (!defined('sugarEntry') || !sugarEntry) {
+    die('Not A Valid Entry Point');
+}
 
-    'panels' => array(
-        'default' => array(
+require_once('include/Dashlets/DashletGeneric.php');
+require_once('modules/lm01_Loan_Management/lm01_Loan_Management.php');
 
-            array(
-                'name',
-                'assigned_user_name',
-            ),
-        ),
+class lm01_Loan_ManagementDashlet extends DashletGeneric {
+    function __construct($id, $def = null)
+    {
+        global $current_user, $app_strings;
+        require('modules/lm01_Loan_Management/metadata/dashletviewdefs.php');
 
-    ),
+        parent::__construct($id, $def);
 
-);
+        if (empty($def['title'])) {
+            $this->title = translate('LBL_HOMEPAGE_TITLE', 'lm01_Loan_Management');
+        }
+
+        $this->searchFields = $dashletData['lm01_Loan_ManagementDashlet']['searchFields'];
+        $this->columns = $dashletData['lm01_Loan_ManagementDashlet']['columns'];
+
+        $this->seedBean = new lm01_Loan_Management();        
+    }
+}

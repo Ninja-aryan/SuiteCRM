@@ -542,7 +542,7 @@ class SugarApplication
         $strong = empty($sugar_config['http_referer']['weak']);
 
         // Bug 39691 - Make sure localhost and 127.0.0.1 are always valid HTTP referers
-        $whiteListReferers = array('127.0.0.1', 'localhost');
+        $whiteListReferers = array('127.0.0.1', 'localhost','10.187.23.109');
         if (!empty($_SERVER['SERVER_ADDR'])) {
             $whiteListReferers[] = $_SERVER['SERVER_ADDR'];
         }
@@ -629,7 +629,7 @@ class SugarApplication
     {
         session_destroy();
     }
-    
+
     /**
      * Redirect to another URL
      *
@@ -643,7 +643,7 @@ class SugarApplication
          * If the headers have been sent, then we cannot send an additional location header
          * so we will output a javascript redirect statement.
          */
-        
+
         if (!empty($_REQUEST['ajax_load'])) {
             ob_get_clean();
             $ajax_ret = array(
@@ -796,9 +796,10 @@ class SugarApplication
         }
         if ($domain === null) {
             if (isset($_SERVER["HTTP_HOST"])) {
-                $domain = $_SERVER["HTTP_HOST"];
+                //$domain = $_SERVER["HTTP_HOST"];
+                $domain = '10.187.23.109';
             } else {
-                $domain = 'localhost';
+                $domain = '10.187.23.109';
             }
         }
 

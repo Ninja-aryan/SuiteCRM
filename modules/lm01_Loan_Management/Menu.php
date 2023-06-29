@@ -38,29 +38,18 @@
  * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
  */
 
-$module_name = 'lm01_Loan_Manager';
-$viewdefs[$module_name]['EditView'] = array(
-    'templateMeta' => array(
-        'maxColumns' => '2',
-        'widths' => array(
-            array('label' => '10', 'field' => '30'),
-            array('label' => '10', 'field' => '30')
-        ),
-    ),
+ if (!defined('sugarEntry') || !sugarEntry) {
+    die('Not A Valid Entry Point');
+}
 
-    'panels' => array(
-        'default' => array(
-
-            array(
-                'name',
-                'assigned_user_name',
-            ),
-
-            array(
-                'description',
-            ),
-        ),
-
-    ),
-
-);
+global $mod_strings, $app_strings, $sugar_config;
+ 
+if(ACLController::checkAccess('lm01_Loan_Management', 'edit', true)){
+    $module_menu[]=array('index.php?module=lm01_Loan_Management&action=EditView&return_module=lm01_Loan_Management&return_action=DetailView', $mod_strings['LNK_NEW_RECORD'], 'Add', 'lm01_Loan_Management');
+}
+if(ACLController::checkAccess('lm01_Loan_Management', 'list', true)){
+    $module_menu[]=array('index.php?module=lm01_Loan_Management&action=index&return_module=lm01_Loan_Management&return_action=DetailView', $mod_strings['LNK_LIST'],'View', 'lm01_Loan_Management');
+}
+if(ACLController::checkAccess('lm01_Loan_Management', 'import', true)){
+    $module_menu[]=array('index.php?module=Import&action=Step1&import_module=lm01_Loan_Management&return_module=lm01_Loan_Management&return_action=index', $app_strings['LBL_IMPORT'], 'Import', 'lm01_Loan_Management');
+}

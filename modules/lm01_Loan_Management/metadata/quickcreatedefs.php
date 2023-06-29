@@ -38,41 +38,25 @@
  * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
  */
 
+$module_name = 'lm01_Loan_Management';
+$viewdefs[$module_name]['QuickCreate'] = array(
+    'templateMeta' => array(
+        'maxColumns' => '2',
+        'widths' => array(
+            array('label' => '10', 'field' => '30'),
+            array('label' => '10', 'field' => '30')
+        ),
+    ),
 
-class lm01_Loan_Manager extends Basic
-{
-    public $new_schema = true;
-    public $module_dir = 'lm01_Loan_Manager';
-    public $object_name = 'lm01_Loan_Manager';
-    public $table_name = 'lm01_loan_manager';
-    public $importable = true;
+    'panels' => array(
+        'default' => array(
 
-    public $id;
-    public $name;
-    public $date_entered;
-    public $date_modified;
-    public $modified_user_id;
-    public $modified_by_name;
-    public $created_by;
-    public $created_by_name;
-    public $description;
-    public $deleted;
-    public $created_by_link;
-    public $modified_user_link;
-    public $assigned_user_id;
-    public $assigned_user_name;
-    public $assigned_user_link;
-    public $SecurityGroups;
-	
-    public function bean_implements($interface)
-    {
-        switch($interface)
-        {
-            case 'ACL':
-                return true;
-        }
+            array(
+                'name',
+                'assigned_user_name',
+            ),
+        ),
 
-        return false;
-    }
-	
-}
+    ),
+
+);

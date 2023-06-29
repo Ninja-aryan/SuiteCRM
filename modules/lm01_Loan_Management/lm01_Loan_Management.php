@@ -38,40 +38,81 @@
  * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
  */
 
-if (!defined('sugarEntry') || !sugarEntry) {
-    die('Not A Valid Entry Point');
+
+class lm01_Loan_Management extends Basic
+{
+    public $new_schema = true;
+    public $module_dir = 'lm01_Loan_Management';
+    public $object_name = 'lm01_Loan_Management';
+    public $table_name = 'lm01_loan_management';
+    public $importable = true;
+
+    public $id;
+    public $name;
+    public $date_entered;
+    public $date_modified;
+    public $modified_user_id;
+    public $modified_by_name;
+    public $created_by;
+    public $created_by_name;
+    public $description;
+    public $deleted;
+    public $created_by_link;
+    public $modified_user_link;
+    public $assigned_user_id;
+    public $assigned_user_name;
+    public $assigned_user_link;
+    public $SecurityGroups;
+    public $loan_reference_number;
+    public $customer_id;
+    public $lead_fields_shop_address;
+    public $lead_fields_facility_address;
+    public $loan_amount;
+    public $tenor;
+    public $emi;
+    public $disbursed_date;
+    public $product_type;
+    public $version;
+    public $principal_outstanding;
+    public $interest_outstanding;
+    public $penalty_due;
+    public $last_payment_date;
+    public $last_payment_amount;
+    public $total_due;
+    public $loan_due_date;
+    public $days_passed_due;
+    public $ninja_score;
+    public $credit_limit;
+    public $lender;
+    public $loan_status;
+    public $nach_bounce_date;
+    public $lead_fields_first_name;
+    public $business_name;
+    public $city;
+    public $phone_number;
+    public $lead_fields_email_id;
+    public $alternate_email;
+    public $lead_fields_date_of_birth;
+    public $gender;
+    public $trader_video_status;
+    public $trader_video_1;
+    public $lead_fields_rh;
+    public $lead_fields_zh;
+    public $lead_fields_ch;
+    public $nach_type;
+    public $customer_name;
+    public $phone_numbers;
+    public $address;
+	
+    public function bean_implements($interface)
+    {
+        switch($interface)
+        {
+            case 'ACL':
+                return true;
+        }
+
+        return false;
+    }
+	
 }
-
-$module_name = 'lm01_Loan_Manager';
-$subpanel_layout = array(
-    'top_buttons' => array(
-        array('widget_class' => 'SubPanelTopCreateButton'),
-        array('widget_class' => 'SubPanelTopSelectButton', 'popup_module' => $module_name),
-    ),
-
-    'where' => '',
-
-    'list_fields' => array(
-        'name' => array(
-            'vname' => 'LBL_NAME',
-            'widget_class' => 'SubPanelDetailViewLink',
-            'width' => '45%',
-        ),
-        'date_modified' => array(
-            'vname' => 'LBL_DATE_MODIFIED',
-            'width' => '45%',
-        ),
-        'edit_button' => array(
-            'vname' => 'LBL_EDIT_BUTTON',
-            'widget_class' => 'SubPanelEditButton',
-            'module' => $module_name,
-            'width' => '4%',
-        ),
-        'remove_button' => array(
-            'vname' => 'LBL_REMOVE',
-            'widget_class' => 'SubPanelRemoveButton',
-            'module' => $module_name,
-            'width' => '5%',
-        ),
-    ),
-);

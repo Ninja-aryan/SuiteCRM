@@ -38,8 +38,8 @@
  * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
  */
 
-$dictionary['lm01_Loan_Manager'] = array(
-    'table' => 'lm01_loan_manager',
+$dictionary['lm01_Loan_Management'] = array(
+    'table' => 'lm01_loan_management',
     'audited' => true,
     'inline_edit' => true,
     'duplicate_merge' => true,
@@ -69,30 +69,9 @@ $dictionary['lm01_Loan_Manager'] = array(
     'min' => false,
     'max' => false,
   ),
-  'customer_id' => 
-  array (
-    'required' => true,
-    'name' => 'customer_id',
-    'vname' => 'LBL_CUSTOMER_ID',
-    'type' => 'varchar',
-    'massupdate' => 0,
-    'no_default' => false,
-    'comments' => '',
-    'help' => '',
-    'importable' => 'true',
-    'duplicate_merge' => 'disabled',
-    'duplicate_merge_dom_value' => '0',
-    'audited' => false,
-    'inline_edit' => true,
-    'reportable' => true,
-    'unified_search' => false,
-    'merge_filter' => 'disabled',
-    'len' => '255',
-    'size' => '20',
-  ),
   'lead_fields_shop_address' => 
   array (
-    'required' => true,
+    'required' => false,
     'name' => 'lead_fields_shop_address',
     'vname' => 'LBL_LEAD_FIELDS_SHOP_ADDRESS',
     'type' => 'varchar',
@@ -113,7 +92,7 @@ $dictionary['lm01_Loan_Manager'] = array(
   ),
   'lead_fields_facility_address' => 
   array (
-    'required' => true,
+    'required' => false,
     'name' => 'lead_fields_facility_address',
     'vname' => 'LBL_LEAD_FIELDS_FACILITY_ADDRESS',
     'type' => 'varchar',
@@ -155,10 +134,10 @@ $dictionary['lm01_Loan_Manager'] = array(
   ),
   'tenor' => 
   array (
-    'required' => true,
+    'required' => false,
     'name' => 'tenor',
     'vname' => 'LBL_TENOR',
-    'type' => 'int',
+    'type' => 'varchar',
     'massupdate' => 0,
     'no_default' => false,
     'comments' => '',
@@ -173,10 +152,6 @@ $dictionary['lm01_Loan_Manager'] = array(
     'merge_filter' => 'disabled',
     'len' => '255',
     'size' => '20',
-    'enable_range_search' => false,
-    'disable_num_format' => '',
-    'min' => false,
-    'max' => false,
   ),
   'emi' => 
   array (
@@ -201,7 +176,7 @@ $dictionary['lm01_Loan_Manager'] = array(
   ),
   'disbursed_date' => 
   array (
-    'required' => true,
+    'required' => false,
     'name' => 'disbursed_date',
     'vname' => 'LBL_DISBURSED_DATE',
     'type' => 'varchar',
@@ -222,7 +197,7 @@ $dictionary['lm01_Loan_Manager'] = array(
   ),
   'product_type' => 
   array (
-    'required' => true,
+    'required' => false,
     'name' => 'product_type',
     'vname' => 'LBL_PRODUCT_TYPE',
     'type' => 'varchar',
@@ -243,7 +218,7 @@ $dictionary['lm01_Loan_Manager'] = array(
   ),
   'version' => 
   array (
-    'required' => true,
+    'required' => false,
     'name' => 'version',
     'vname' => 'LBL_VERSION',
     'type' => 'varchar',
@@ -264,10 +239,10 @@ $dictionary['lm01_Loan_Manager'] = array(
   ),
   'principal_outstanding' => 
   array (
-    'required' => true,
+    'required' => false,
     'name' => 'principal_outstanding',
     'vname' => 'LBL_PRINCIPAL_OUTSTANDING',
-    'type' => 'int',
+    'type' => 'float',
     'massupdate' => 0,
     'no_default' => false,
     'comments' => '',
@@ -280,19 +255,17 @@ $dictionary['lm01_Loan_Manager'] = array(
     'reportable' => true,
     'unified_search' => false,
     'merge_filter' => 'disabled',
-    'len' => '255',
+    'len' => '18',
     'size' => '20',
     'enable_range_search' => false,
-    'disable_num_format' => '',
-    'min' => false,
-    'max' => false,
+    'precision' => '8',
   ),
   'interest_outstanding' => 
   array (
     'required' => false,
     'name' => 'interest_outstanding',
     'vname' => 'LBL_INTEREST_OUTSTANDING',
-    'type' => 'int',
+    'type' => 'float',
     'massupdate' => 0,
     'no_default' => false,
     'comments' => '',
@@ -305,19 +278,17 @@ $dictionary['lm01_Loan_Manager'] = array(
     'reportable' => true,
     'unified_search' => false,
     'merge_filter' => 'disabled',
-    'len' => '255',
+    'len' => '18',
     'size' => '20',
     'enable_range_search' => false,
-    'disable_num_format' => '',
-    'min' => false,
-    'max' => false,
+    'precision' => '8',
   ),
   'penalty_due' => 
   array (
-    'required' => true,
+    'required' => false,
     'name' => 'penalty_due',
     'vname' => 'LBL_PENALTY_DUE',
-    'type' => 'int',
+    'type' => 'float',
     'massupdate' => 0,
     'no_default' => false,
     'comments' => '',
@@ -330,12 +301,10 @@ $dictionary['lm01_Loan_Manager'] = array(
     'reportable' => true,
     'unified_search' => false,
     'merge_filter' => 'disabled',
-    'len' => '255',
+    'len' => '18',
     'size' => '20',
     'enable_range_search' => false,
-    'disable_num_format' => '',
-    'min' => false,
-    'max' => false,
+    'precision' => '8',
   ),
   'last_payment_date' => 
   array (
@@ -363,7 +332,7 @@ $dictionary['lm01_Loan_Manager'] = array(
     'required' => false,
     'name' => 'last_payment_amount',
     'vname' => 'LBL_LAST_PAYMENT_AMOUNT',
-    'type' => 'int',
+    'type' => 'float',
     'massupdate' => 0,
     'no_default' => false,
     'comments' => '',
@@ -376,19 +345,17 @@ $dictionary['lm01_Loan_Manager'] = array(
     'reportable' => true,
     'unified_search' => false,
     'merge_filter' => 'disabled',
-    'len' => '255',
+    'len' => '18',
     'size' => '20',
     'enable_range_search' => false,
-    'disable_num_format' => '',
-    'min' => false,
-    'max' => false,
+    'precision' => '8',
   ),
   'total_due' => 
   array (
     'required' => false,
     'name' => 'total_due',
     'vname' => 'LBL_TOTAL_DUE',
-    'type' => 'int',
+    'type' => 'float',
     'massupdate' => 0,
     'no_default' => false,
     'comments' => '',
@@ -401,16 +368,14 @@ $dictionary['lm01_Loan_Manager'] = array(
     'reportable' => true,
     'unified_search' => false,
     'merge_filter' => 'disabled',
-    'len' => '255',
+    'len' => '18',
     'size' => '20',
     'enable_range_search' => false,
-    'disable_num_format' => '',
-    'min' => false,
-    'max' => false,
+    'precision' => '8',
   ),
   'loan_due_date' => 
   array (
-    'required' => true,
+    'required' => false,
     'name' => 'loan_due_date',
     'vname' => 'LBL_LOAN_DUE_DATE',
     'type' => 'varchar',
@@ -431,7 +396,7 @@ $dictionary['lm01_Loan_Manager'] = array(
   ),
   'days_passed_due' => 
   array (
-    'required' => true,
+    'required' => false,
     'name' => 'days_passed_due',
     'vname' => 'LBL_DAYS_PASSED_DUE',
     'type' => 'int',
@@ -459,7 +424,7 @@ $dictionary['lm01_Loan_Manager'] = array(
     'required' => false,
     'name' => 'ninja_score',
     'vname' => 'LBL_NINJA_SCORE',
-    'type' => 'int',
+    'type' => 'float',
     'massupdate' => 0,
     'no_default' => false,
     'comments' => '',
@@ -472,19 +437,17 @@ $dictionary['lm01_Loan_Manager'] = array(
     'reportable' => true,
     'unified_search' => false,
     'merge_filter' => 'disabled',
-    'len' => '255',
+    'len' => '18',
     'size' => '20',
     'enable_range_search' => false,
-    'disable_num_format' => '',
-    'min' => false,
-    'max' => false,
+    'precision' => '8',
   ),
   'credit_limit' => 
   array (
     'required' => false,
     'name' => 'credit_limit',
     'vname' => 'LBL_CREDIT_LIMIT',
-    'type' => 'int',
+    'type' => 'varchar',
     'massupdate' => 0,
     'no_default' => false,
     'comments' => '',
@@ -499,14 +462,10 @@ $dictionary['lm01_Loan_Manager'] = array(
     'merge_filter' => 'disabled',
     'len' => '255',
     'size' => '20',
-    'enable_range_search' => false,
-    'disable_num_format' => '',
-    'min' => false,
-    'max' => false,
   ),
   'lender' => 
   array (
-    'required' => true,
+    'required' => false,
     'name' => 'lender',
     'vname' => 'LBL_LENDER',
     'type' => 'varchar',
@@ -527,7 +486,7 @@ $dictionary['lm01_Loan_Manager'] = array(
   ),
   'loan_status' => 
   array (
-    'required' => true,
+    'required' => false,
     'name' => 'loan_status',
     'vname' => 'LBL_LOAN_STATUS',
     'type' => 'varchar',
@@ -569,7 +528,7 @@ $dictionary['lm01_Loan_Manager'] = array(
   ),
   'lead_fields_first_name' => 
   array (
-    'required' => true,
+    'required' => false,
     'name' => 'lead_fields_first_name',
     'vname' => 'LBL_LEAD_FIELDS_FIRST_NAME',
     'type' => 'varchar',
@@ -611,7 +570,7 @@ $dictionary['lm01_Loan_Manager'] = array(
   ),
   'city' => 
   array (
-    'required' => true,
+    'required' => false,
     'name' => 'city',
     'vname' => 'LBL_CITY',
     'type' => 'varchar',
@@ -632,7 +591,7 @@ $dictionary['lm01_Loan_Manager'] = array(
   ),
   'phone_number' => 
   array (
-    'required' => true,
+    'required' => false,
     'name' => 'phone_number',
     'vname' => 'LBL_PHONE_NUMBER',
     'type' => 'phone',
@@ -862,11 +821,11 @@ $dictionary['lm01_Loan_Manager'] = array(
     'len' => '255',
     'size' => '20',
   ),
-  'nach_registration' => 
+  'customer_name' => 
   array (
     'required' => false,
-    'name' => 'nach_registration',
-    'vname' => 'LBL_NACH_REGISTRATION',
+    'name' => 'customer_name',
+    'vname' => 'LBL_CUSTOMER_NAME',
     'type' => 'varchar',
     'massupdate' => 0,
     'no_default' => false,
@@ -925,94 +884,6 @@ $dictionary['lm01_Loan_Manager'] = array(
     'len' => '255',
     'size' => '20',
   ),
-  'principal_outstanding_1' => 
-  array (
-    'required' => false,
-    'name' => 'principal_outstanding_1',
-    'vname' => 'LBL_PRINCIPAL_OUTSTANDING_1',
-    'type' => 'float',
-    'massupdate' => 0,
-    'no_default' => false,
-    'comments' => '',
-    'help' => '',
-    'importable' => 'true',
-    'duplicate_merge' => 'disabled',
-    'duplicate_merge_dom_value' => '0',
-    'audited' => false,
-    'inline_edit' => true,
-    'reportable' => true,
-    'unified_search' => false,
-    'merge_filter' => 'disabled',
-    'len' => '18',
-    'size' => '20',
-    'enable_range_search' => false,
-    'precision' => '8',
-  ),
-  'interest_outstanding_1' => 
-  array (
-    'required' => false,
-    'name' => 'interest_outstanding_1',
-    'vname' => 'LBL_INTEREST_OUTSTANDING_1',
-    'type' => 'float',
-    'massupdate' => 0,
-    'no_default' => false,
-    'comments' => '',
-    'help' => '',
-    'importable' => 'true',
-    'duplicate_merge' => 'disabled',
-    'duplicate_merge_dom_value' => '0',
-    'audited' => false,
-    'inline_edit' => true,
-    'reportable' => true,
-    'unified_search' => false,
-    'merge_filter' => 'disabled',
-    'len' => '18',
-    'size' => '20',
-    'enable_range_search' => false,
-    'precision' => '8',
-  ),
-  'total_due_1' => 
-  array (
-    'required' => false,
-    'name' => 'total_due_1',
-    'vname' => 'LBL_TOTAL_DUE_1',
-    'type' => 'varchar',
-    'massupdate' => 0,
-    'no_default' => false,
-    'comments' => '',
-    'help' => '',
-    'importable' => 'true',
-    'duplicate_merge' => 'disabled',
-    'duplicate_merge_dom_value' => '0',
-    'audited' => false,
-    'inline_edit' => true,
-    'reportable' => true,
-    'unified_search' => false,
-    'merge_filter' => 'disabled',
-    'len' => '255',
-    'size' => '20',
-  ),
-  'penalty_due_1' => 
-  array (
-    'required' => false,
-    'name' => 'penalty_due_1',
-    'vname' => 'LBL_PENALTY_DUE_1',
-    'type' => 'varchar',
-    'massupdate' => 0,
-    'no_default' => false,
-    'comments' => '',
-    'help' => '',
-    'importable' => 'true',
-    'duplicate_merge' => 'disabled',
-    'duplicate_merge_dom_value' => '0',
-    'audited' => false,
-    'inline_edit' => true,
-    'reportable' => true,
-    'unified_search' => false,
-    'merge_filter' => 'disabled',
-    'len' => '255',
-    'size' => '20',
-  ),
 ),
     'relationships' => array (
 ),
@@ -1022,4 +893,4 @@ $dictionary['lm01_Loan_Manager'] = array(
 if (!class_exists('VardefManager')) {
         require_once('include/SugarObjects/VardefManager.php');
 }
-VardefManager::createVardef('lm01_Loan_Manager', 'lm01_Loan_Manager', array('basic','assignable','security_groups'));
+VardefManager::createVardef('lm01_Loan_Management', 'lm01_Loan_Management', array('basic','assignable','security_groups'));

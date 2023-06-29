@@ -44,9 +44,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
 global $app_strings;
 
-$dashletMeta['lm01_Loan_ManagerDashlet'] = array(
-    'module' => 'lm01_Loan_Manager',
-    'title' => translate('LBL_HOMEPAGE_TITLE', 'lm01_Loan_Manager'),
-    'description' => 'A customizable view into lm01_Loan_Manager',
+$dashletMeta['lm01_Loan_ManagementDashlet'] = array(
+    'module' => 'lm01_Loan_Management',
+    'title' => translate('LBL_HOMEPAGE_TITLE', 'lm01_Loan_Management'),
+    'description' => 'A customizable view into lm01_Loan_Management',
     'category' => 'Module Views'
 );
